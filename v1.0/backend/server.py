@@ -1,14 +1,18 @@
-from flask import Flask
+
+from flask import Flask, request, redirect
 
 #Initializing the flask app
 app = Flask(__name__)
 
 #Route for seeing data
-@app.route('/data')
+@app.route('/data', methods = ['GET','POST'])
 def get_time():
+    if request.method == 'POST':
+        formName = request.form['formName']
+        formAge = request.form['formAge']
     return {
-        'Name':'Yomal',
-        'Age':'201'
+        'Name':formName,
+        'Age':formAge
     }
 
 #running app
