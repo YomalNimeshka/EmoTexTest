@@ -1,9 +1,18 @@
-import logo from './logo.svg';
 import React, { useState, useEffect } from "react";
+import Chatbot from 'react-chatbot-kit';
+import 'react-chatbot-kit/build/main.css';
+
+import config from './chatbot/config';
+import MessageParser from './chatbot/MessageParser';
+import ActionProvider from './chatbot/ActionProvider';
+
 import './App.css';
+import Header from './chatbot/chatbotHeader';
+import Body from "./chatbot/chatbotBody";
 
 function App() {
 
+/*
   const [data, setdata] = useState({
     name: "",
     age:""
@@ -16,27 +25,35 @@ function App() {
         res.json().then((data) => {
             // Setting a data from api
             setdata({
-                name: data.Name,
-                age: data.Age
+                emotion: data.Emotion
             });
         })
     );
-}, []);
+}, []); 
+
+*/
 
   return (
     <div className="App">
-      <header className="App-header">
+      <Header/>
+      <Body/>
+      {/* <Chatbot 
+        config={config} 
+        actionProvider={ActionProvider} 
+        messageParser={MessageParser}
+      /> */}
+      
+
+      {/* <header className="App-header">
         <h1>React and Flask connection test</h1>
         
         <form action='' method='POST'>
-          <p>Form name = <input type="text" name="formName"/></p>
-          <p>Form age = <input type="text" name="formAge"/></p>
+          <p>Sentence to Enter = <input type="text" name="TextToWrite"/></p>
           <input type="submit" name="submit"/>
         </form>
 
-        <p>Server Name : {data.name}</p>
-        <p>Server Age : {data.age}</p>
-      </header>
+        <p>Server emotion detected : {data.Emotion}</p>
+      </header>  */}
     </div>
   );
 }
