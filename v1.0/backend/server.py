@@ -17,30 +17,33 @@ def get_response():
     TextOnJson = request.json
     TextToWrite = TextOnJson['emoData']
     #print(TextToWrite)
+    if TextToWrite == '':
+        emotion_response = "Hmm you need to talk me my friend. Type about your day"
 
-    # Sending the user text to the predictor to predict the emotion
-    Final_emotion = predict(TextToWrite)
-    #print(Final_emotion)
-    #Final_emotion = 'joy'
-
-    # Condtions to get the proper response according to the detected emotion
-    if Final_emotion == 'joy':
-        emotion_response = emotion_joy()
-    
-    elif Final_emotion == 'anger':
-        emotion_response = emotion_angry()
-
-    elif Final_emotion == 'fear':
-        emotion_response = emotion_fear()
-    
-    elif Final_emotion == 'surprise':
-        emotion_response = emotion_surprise()
-    
-    elif Final_emotion == 'sadness':
-        emotion_response = emotion_sadness()
     else:
-        return "Cant respond"
-    
+        # Sending the user text to the predictor to predict the emotion
+        Final_emotion = predict(TextToWrite)
+        #print(Final_emotion)
+        #Final_emotion = 'joy'
+
+        # Condtions to get the proper response according to the detected emotion
+        if Final_emotion == 'joy':
+            emotion_response = emotion_joy()
+        
+        elif Final_emotion == 'anger':
+            emotion_response = emotion_angry()
+
+        elif Final_emotion == 'fear':
+            emotion_response = emotion_fear()
+        
+        elif Final_emotion == 'surprise':
+            emotion_response = emotion_surprise()
+        
+        elif Final_emotion == 'sadness':
+            emotion_response = emotion_sadness()
+        else:
+            return "Cant respond"
+        
     return {"data":emotion_response}
 
 
