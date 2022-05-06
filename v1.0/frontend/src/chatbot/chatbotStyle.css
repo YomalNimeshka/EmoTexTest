@@ -1,0 +1,246 @@
+body {
+    background-color: #edeff2;
+    font-family: "Calibri", "Roboto", sans-serif;
+  }
+
+.title{
+    text-align: center;
+    color: #a7a9ad;
+}
+
+.chat_bot_intial {
+    position:relative;
+    width:auto;
+    padding:10px;
+    height:50px;
+    margin-top: 10px;
+    margin-right:500px;
+    margin-bottom: 10px;
+    float: left;
+    text-align:center;
+    color:black;
+    background:#8496f0;
+    /* border: 1px solid gray; */
+    border-radius: 30px;
+    box-shadow:3px 5px #888888;
+}
+
+/* creates part of the curve */
+.chat_bot_intial:before {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    top: 7px;
+    left: -8px;
+    height: 20px;
+    border-left: 20px solid #8496f0;
+    border-bottom-right-radius: 16px 14px;
+    -webkit-transform: translate(0, -2px);
+}
+
+/* creates part of the curved pointy bit */
+.chat_bot_intial:after {
+    content: "";
+    position: absolute;
+    z-index: 3;
+    top: 7px;
+    left: 4px;
+    width: 26px;
+    height: 20px;
+    background: #f8f8f8;
+    border-top-right-radius: 14px;
+    -webkit-transform: translate(-30px, -2px);
+}
+
+/* Keyframes for the fade-in */
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+
+
+.chat_bot {
+    position:relative;
+    width:auto;
+    padding:10px;
+    height:50px;
+    margin-right:130px;
+    margin-bottom: 10px;
+    float: left;
+    text-align:center;
+    color:black;
+    background:#8496f0;
+    /* border: 1px solid gray; */
+    border-radius: 30px;
+    box-shadow:3px 5px #888888;
+
+    /*This is for the animation fade in*/
+    opacity:0;
+    -webkit-animation:fadeIn ease-in 1;
+    -moz-animation:fadeIn ease-in 1;
+    animation:fadeIn ease-in 1;
+
+    -webkit-animation-fill-mode:forwards;
+    -moz-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+
+    -webkit-animation-duration:1s;
+    -moz-animation-duration:1s;
+    animation-duration:1s;
+}
+
+/*Animation time*/
+.chat_bot.delay{
+    -webkit-animation-delay: 0.1s;
+    -moz-animation-delay: 0.1s;
+    animation-delay: 0.1s;
+}
+
+/* creates part of the curve */
+.chat_bot:before {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    top: 7px;
+    left: -8px;
+    height: 20px;
+    border-left: 20px solid #8496f0;
+    border-bottom-right-radius: 16px 14px;
+    -webkit-transform: translate(0, -2px);
+}
+
+/* creates part of the curved pointy bit */
+.chat_bot:after {
+    content: "";
+    position: absolute;
+    z-index: 3;
+    top: 7px;
+    left: 4px;
+    width: 26px;
+    height: 20px;
+    background: #f8f8f8;
+    border-top-right-radius: 14px;
+    -webkit-transform: translate(-30px, -2px);
+}
+
+.chat_user {
+    position:relative;
+    width:auto;
+    padding:10px;
+    height:50px;
+    margin-left:300px;
+    margin-bottom: 10px;
+    float: right;
+    text-align:center;
+    color:black;
+    background:#c5e3ce;
+    /* border: 1px solid gray; */
+    border-radius: 30px;
+    box-shadow:-3px 5px #888888;
+}
+
+/* creates part of the curve */
+.chat_user:before {
+    content: "";
+    position: absolute;
+    z-index: 3;
+    top: 9px;
+    right: -9px;
+    height: 20px;
+    border-right: 20px solid #c5e3ce;
+    border-bottom-right-radius: 16px 14px;
+    -webkit-transform: translate(0, -2px);
+}
+
+/* creates part of the curved pointy bit */
+.chat_user:after {
+    content: "";
+    position: absolute;
+    z-index: 3;
+    top: 7px;
+    right: -26px;
+    width: 26px;
+    height: 20px;
+    background: #f8f8f8;
+    border-top-left-radius: 14px;
+    -webkit-transform: translate(-30px, -2px);
+    transform: rotate(180);
+}
+
+.container{
+    position: absolute;
+    width: calc(100% - 20px);
+    max-width: 800px;
+    height: 500px;
+    border-radius: 10px;
+    background-color: #fff;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%)
+    translateY(-50%);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    background-color: #f8f8f8;
+    overflow: hidden;
+}
+
+.bottom_wrapper {
+    position: relative;
+    width: 100%;
+    background-color: #f8f8f8;
+    padding: 20px 20px;
+    position: absolute;
+    bottom: 0;
+  }
+
+.bottom_wrapper .user_input_wrapper {
+    display: inline-block;
+    height: 50px;
+    border-radius: 25px;
+    border: 1px solid #bcbdc0;
+    width: calc(100% - 160px);
+    position: relative;
+    padding: 0 20px;
+  }
+.bottom_wrapper .user_input_wrapper .user_input {
+    border: none;
+    height: 100%;
+    box-sizing: border-box;
+    width: calc(100% - 40px);
+    /* position: absolute; */
+    outline-width: 0;
+    color: gray;
+    background-color: #f8f8f8;
+  }
+.bottom_wrapper .send_input {
+    width: 140px;
+    height: 50px;
+    display: inline-block;
+    border-radius: 50px;
+    background-color: #a3d063;
+    border: 2px solid #a3d063;
+    color: #000;
+    cursor: pointer;
+    transition: all 0.2s linear;
+    text-align: center;
+    float: right;
+  }
+.bottom_wrapper .send_input:hover {
+    color: #a3d063;
+    background-color: #fff;
+  }
+.bottom_wrapper .send_input .text {
+    font-size: 18px;
+    font-weight: 300;
+    display: inline-block;
+    line-height: 48px;
+  }
+
+.submit_button{
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}

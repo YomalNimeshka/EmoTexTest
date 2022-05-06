@@ -2,10 +2,6 @@ import React, { useState, useEffect } from "react";
 import Chatbot from 'react-chatbot-kit';
 import 'react-chatbot-kit/build/main.css';
 
-import config from './chatbot/config';
-import MessageParser from './chatbot/MessageParser';
-import ActionProvider from './chatbot/ActionProvider';
-
 import './App.css';
 import Header from './chatbot/chatbotHeader';
 import Body from "./chatbot/chatbotBody";
