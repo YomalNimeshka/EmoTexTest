@@ -7,10 +7,13 @@ function Body(props) {
     const [botRes, setBotres] = useState("");
     const [userInput, setUserInput] = useState("");
     const [chat, setChat] = useState([]);
+    const [chatbotRes, setChatbotRes]= useState([{id:"1", type:"botResponse", message:"Tell how your day was today"}]);
     
     const fetchData = async (e) => {
         e.preventDefault();
         setUserInput(emoData);
+        setdata("");
+        chatbotRes.push({id:"2", message: emoData, type:"userResponse"})
         const response = await fetch("http://localhost:5000/", {
             method:'POST', 
             headers:{'Accept': 'application/json', 'Content-Type': 'application/json'}, 
@@ -22,6 +25,8 @@ function Body(props) {
         const json = await response.json();
         const jsonData = json.data;
         setBotres(json.data);
+
+        setChatbotRes([...chatbotRes, {id:"2", message:json.data, type:"botResponse"}])
 
         let ch=[];
         ch.push({from:'Our', msag: emoData});
@@ -38,26 +43,39 @@ function Body(props) {
                 <div className="title">
                     <h4>Conversation </h4>
                 </div>
-                <div className="chat_bot_intial">
-                    Tell me how your day was today!
-                </div>
+                <div className="scroll">
                 {
-                    chat.map((msg) => {
-                        if(msg.from == 'cb'){
-                            return <div className="chat_bot delay">
-                                    {msg.msag} 
-                                </div>
-                        }
-                        else{
-                            return <div className="chat_user" >
-                                    {msg.msag}
-                                </div>
-                        }
+                    // chat.map((msg) => {
+                    //     if(msg.from == 'cb'){
+                    //         return <div className="chat_bot delay">
+                    //                 {msg.msag} 
+                    //             </div>
+                    //     }
+                    //     else{
+                    //         return <div className="chat_user" >
+                    //                 {msg.msag}
+                    //             </div>
+                    //     }
+                    // })
+
+                    chatbotRes.map((data, index)=> {
+                        return (data.type === "botResponse" ?
+                        <div className="chat_bot delay">
+                            {data.message} 
+                        </div>
+                        :
+                        <div className="chat_user" >
+                            {data.message}
+                        </div>
+                        )
                     })
                 }
+                </div>
+                {/* <div className="chat_bot_intial">
+                    Tell me how your day was today!
+                </div> */}
+                
 
-                {/* <p>User Input : {userInput} </p>
-                <p> Bot Response : {botRes}</p> */}
             </div>
             <div className="bottom_wrapper clearfix">
                 <form onSubmit={(e) => fetchData(e)}>
