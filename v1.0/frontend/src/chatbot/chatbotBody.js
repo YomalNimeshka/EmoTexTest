@@ -12,8 +12,10 @@ function Body(props) {
     const fetchData = async (e) => {
         e.preventDefault();
         setUserInput(emoData);
+
         setdata("");
         chatbotRes.push({id:"2", message: emoData, type:"userResponse"})
+
         const response = await fetch("http://localhost:5000/", {
             method:'POST', 
             headers:{'Accept': 'application/json', 'Content-Type': 'application/json'}, 
@@ -28,12 +30,6 @@ function Body(props) {
 
         setChatbotRes([...chatbotRes, {id:"2", message:json.data, type:"botResponse"}])
 
-        // let ch=[];
-        // ch.push({from:'Our', msag: emoData});
-        // ch.push({from:'cb', msag: jsonData});
-        // setChat(ch)
-        // console.log("chat",chat);
-        // setdata("");
 
     };
 
@@ -45,19 +41,6 @@ function Body(props) {
                 </div>
                 <div className="scroll">
                 {
-                    // chat.map((msg) => {
-                    //     if(msg.from == 'cb'){
-                    //         return <div className="chat_bot delay">
-                    //                 {msg.msag} 
-                    //             </div>
-                    //     }
-                    //     else{
-                    //         return <div className="chat_user" >
-                    //                 {msg.msag}
-                    //             </div>
-                    //     }
-                    // })
-
                     chatbotRes.map((data, index)=> {
                         return (data.type === "botResponse" ?
                         <div className="chat_bot delay">
@@ -71,9 +54,6 @@ function Body(props) {
                     })
                 }
                 </div>
-                {/* <div className="chat_bot_intial">
-                    Tell me how your day was today!
-                </div> */}
                 
 
             </div>
