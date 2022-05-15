@@ -2,13 +2,16 @@ import React, { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './chatbotStyle.css'
 
+
 function Body(props) {
     const [emoData, setdata] = useState("");
     const [botRes, setBotres] = useState("");
     const [userInput, setUserInput] = useState("");
     const [chat, setChat] = useState([]);
     const [chatbotRes, setChatbotRes]= useState([{id:"1", type:"botResponse", message:"Tell me how your day was today"}]);
-    
+    const current = new Date();
+    const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
+
     const fetchData = async (e) => {
         e.preventDefault();
         setUserInput(emoData);
@@ -37,7 +40,7 @@ function Body(props) {
         <div className="container">
             <div className="message_section" >
                 <div className="title">
-                    <h4>Conversation </h4>
+                    <h4>Today's {date}</h4>
                 </div>
                 <div className="scroll">
                 {
@@ -67,9 +70,10 @@ function Body(props) {
                     </div>
                     <div className="send_input">
                         <button type='submit' className="submit_button" >
-                            <div className="text">
+                            <img className="send-image" src={process.env.PUBLIC_URL+"send.png"} />
+                            {/* <div className="text">
                                 Send
-                            </div>
+                            </div> */}
                             
                         </button>
                     </div>

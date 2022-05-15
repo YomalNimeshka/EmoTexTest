@@ -1,11 +1,12 @@
 body {
     background-color: #edeff2;
-    font-family: "Calibri", "Roboto", sans-serif;
+    font-family: 'Roboto-light', sans-serif !important;
   }
 
 .title{
     text-align: center;
-    color: #a7a9ad;
+    color: #3c3c3c;
+    padding-top: 5px;
 }
 
 .chat_bot_intial {
@@ -64,7 +65,7 @@ body {
     width:auto;
     padding:10px;
     height:50px;
-    margin-right:315px;
+    margin-right:100px;
     margin-bottom: 10px;
     float: left;
     text-align:center;
@@ -72,7 +73,7 @@ body {
     background:#6d7ccc;
     /* border: 1px solid gray; */
     border-radius: 30px;
-    box-shadow:3px 5px #888888;
+    box-shadow: 0 3px 4px 0 rgba(87,116,151,.1)!important;
 
     /*This is for the animation fade in*/
     opacity:0;
@@ -118,7 +119,7 @@ body {
     left: 4px;
     width: 26px;
     height: 20px;
-    background: #f8f8f8;
+    background: #dbdada;
     border-top-right-radius: 14px;
     -webkit-transform: translate(-30px, -2px);
 }
@@ -134,9 +135,10 @@ body {
     text-align:center;
     color:black;
     background:#a3d063;
+    box-shadow: 0 3px 4px 0 rgba(87,116,151,.1)!important;
     /* border: 1px solid gray; #888888 */
     border-radius: 30px;
-    box-shadow:-3px 5px #888888;
+    /* box-shadow:-3px 5px #a0bb9e; */
 }
 
 /* creates part of the curve */
@@ -161,7 +163,7 @@ body {
     right: -26px;
     width: 26px;
     height: 20px;
-    background: #f8f8f8;
+    background: #dbdada;
     border-top-left-radius: 14px;
     -webkit-transform: translate(-30px, -2px);
     transform: rotate(180);
@@ -169,24 +171,24 @@ body {
 
 .container{
     position: absolute;
-    width: calc(100% - 20px);
-    max-width: 800px;
+    width: calc(100% - 20px) !important;
+    max-width: 800px !important;
     height: 500px;
     border-radius: 10px;
     background-color: #fff;
-    left: 50%;
-    top: 50%;
+    left: 69%;
+    top: 52%;
     transform: translateX(-50%)
     translateY(-50%);
     box-shadow: 0 10px 20px rgba(76, 76, 185, 0.6);
-    background-color: #f8f8f8;
+    background-color: #dbdada;
     overflow: hidden;
 }
 
 .bottom_wrapper {
     position: relative;
     width: 100%;
-    background-color: #f8f8f8;
+    background-color: #dbdada;
     padding: 20px 20px;
     position: absolute;
     bottom: 0;
@@ -196,7 +198,7 @@ body {
     display: inline-block;
     height: 50px;
     border-radius: 25px;
-    border: 1px solid #bcbdc0;
+    border: 1px solid #787878;
     width: calc(100% - 160px);
     position: relative;
     padding: 0 20px;
@@ -208,8 +210,8 @@ body {
     width: calc(100% - 40px);
     /* position: absolute; */
     outline-width: 0;
-    color: gray;
-    background-color: #f8f8f8;
+    color: #000;
+    background-color: #dbdada;
   }
 .bottom_wrapper .send_input {
     width: 140px;
@@ -243,12 +245,15 @@ body {
 	font: inherit;
 	cursor: pointer;
 	outline: inherit;
+    width: 114px;
+    height: 47px;
+    border-radius: 50px;
 }
 
 .scroll {  
     overflow-y: scroll;
     overflow-x: hidden;
-    height: 375px;  
+    height: 364px;  
     padding: 1rem;
 
 
@@ -258,13 +263,13 @@ body {
 {
 	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 	border-radius: 10px;
-	background-color: #F5F5F5;
+	background-color: #dbdada;
 }
 
 .scroll.scroll::-webkit-scrollbar
 {
 	width: 12px;
-	background-color: #F5F5F5;
+	background-color: #dbdada;
 }
 
 .scroll::-webkit-scrollbar-thumb
@@ -274,11 +279,22 @@ body {
 	background-color: #555;
 }
 
+.send-image{
+    height: 1.7rem;
+}
+
+/*  */
 /* Header style section */
+/*  */
+.background{
+    height: 100vh;
+    background-image: url(../website-background.jpg);
+}
+
 .chat_header{
     height: 15vh;
     width: 100%;
-    background-color: #e6e6e6;
+    background-color: rgba(87, 86, 86, 0.4);
 }
 
 .app_header {
@@ -290,7 +306,7 @@ body {
 
 .app_header_title{
     padding: 7px;
-    color: #313131;
+    color: #ececec;
 }
 
 .app_header_icon{
@@ -298,3 +314,66 @@ body {
     left: 579px;
 }
 
+/*  */
+/* Infomation Card Styling Section */
+/*  */
+
+.info-card-container{
+    position: absolute;
+    width: calc(100% - 40px) !important;
+    max-width: 400px !important;
+    height: 500px;
+    border-radius: 10px;
+    background-color: #fff;
+    left: 20%;
+    top: 52%;
+    transform: translateX(-50%)
+    translateY(-50%);
+    box-shadow: 0 10px 20px rgba(76, 76, 185, 0.6);
+    background-color: #f8f8f8;
+    overflow: hidden;
+}
+
+.info-card-header{
+    height: 65px;
+    background-color: #202020;
+}
+
+.info-card-icon{
+    float: left;
+    padding-left: 10px;
+}
+
+.info-card-title{
+    float: right;
+    padding-top: 20px;
+    padding-right: 23px;
+    color: #fff;
+}
+
+.info-card-body{
+    background-color: #dbdada;
+    height: 70vh;
+}
+
+.info-card-message{
+    height: 62px;
+}
+
+.info-card-message-icon{
+    padding-top: 5px;
+    padding-left: 10px;
+ }
+
+.list-icon{
+    float: left;
+    height: 3rem;
+}
+
+.info-card-message-text{
+    padding-top: 9px;
+    text-align: justify;
+    padding-left: 5px;
+    position: fixed;
+    left: 17%;
+}

@@ -5,6 +5,7 @@ import 'react-chatbot-kit/build/main.css';
 import './App.css';
 import Header from './chatbot/chatbotHeader';
 import Body from "./chatbot/chatbotBody";
+import Card from "./chatbot/emotionInfoCard";
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
     <div className="App">
       <Header/>
       <Body/>
+      <Card/>
     </div>
   );
 }
