@@ -1,6 +1,6 @@
 # EmoTexTest
 
-## To Run the Flask API Server 
+## To run the Flask API Server 
   * Direct to the backend folder by using 
   ```
     cd v1.0/backend 
