@@ -1,11 +1,19 @@
 import React from "react";
+import './chatbotStyle.css'
 
 function Header(){
 
 
     return(
-        <div style={{width:'100%', height:'50px'}}>
-            <h2 style={{padding:'7px'}}>Emotex</h2>
+        <div className="chat_header">
+            <div className="app_header_icon">
+                {/* Bot icon by Icons8 */}
+                <img src={process.env.PUBLIC_URL+"icons-bot-64.png"} />
+            </div>
+            <div className="app_header">
+                <h2 className="app_header_title">EmoTex</h2>
+            </div>
+            
         </div>
     );
 }

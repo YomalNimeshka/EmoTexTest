@@ -7,7 +7,7 @@ function Body(props) {
     const [botRes, setBotres] = useState("");
     const [userInput, setUserInput] = useState("");
     const [chat, setChat] = useState([]);
-    const [chatbotRes, setChatbotRes]= useState([{id:"1", type:"botResponse", message:"Tell how your day was today"}]);
+    const [chatbotRes, setChatbotRes]= useState([{id:"1", type:"botResponse", message:"Tell me how your day was today"}]);
     
     const fetchData = async (e) => {
         e.preventDefault();
@@ -28,12 +28,12 @@ function Body(props) {
 
         setChatbotRes([...chatbotRes, {id:"2", message:json.data, type:"botResponse"}])
 
-        let ch=[];
-        ch.push({from:'Our', msag: emoData});
-        ch.push({from:'cb', msag: jsonData});
-        setChat(ch)
-        console.log("chat",chat);
-        setdata("");
+        // let ch=[];
+        // ch.push({from:'Our', msag: emoData});
+        // ch.push({from:'cb', msag: jsonData});
+        // setChat(ch)
+        // console.log("chat",chat);
+        // setdata("");
 
     };
 
@@ -80,7 +80,7 @@ function Body(props) {
             <div className="bottom_wrapper clearfix">
                 <form onSubmit={(e) => fetchData(e)}>
                     <div className="user_input_wrapper">
-                        <input type='text' onChange={(e) => setdata(e.target.value)} value={emoData} 
+                        <input type='text' spellCheck='true' onChange={(e) => setdata(e.target.value)} value={emoData} 
                             className='user_input'
                             placeholder="Type how your day was today..."
                             />
