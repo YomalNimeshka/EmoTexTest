@@ -17,7 +17,7 @@ def get_response():
     TextOnJson = request.json
     TextToWrite = TextOnJson['emoData']
     #print(TextToWrite)
-    if TextToWrite == '':
+    if TextToWrite == ' ':
         emotion_response = "Hmm you need to talk me my friend. Type about your day"
 
     else:

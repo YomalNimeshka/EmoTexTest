@@ -34,7 +34,6 @@ def predict(sentence):
     sentence = pad_sequences(sentence, maxlen=256, truncating='pre')
     result = label_encoder.inverse_transform(np.argmax(savedModel.predict(sentence), axis=-1))[0]
     proba =  np.max(savedModel.predict(sentence))
-    #print(f"{result} : {proba}\n\n")
     return result
 
 #while True:

@@ -63,7 +63,7 @@ function Body(props) {
             <div className="bottom_wrapper clearfix">
                 <form onSubmit={(e) => fetchData(e)}>
                     <div className="user_input_wrapper">
-                        <input type='text' spellCheck='true' onChange={(e) => setdata(e.target.value)} value={emoData} 
+                        <input required='true' type='text' spellCheck='true' onChange={(e) => setdata(e.target.value)} value={emoData} 
                             className='user_input'
                             placeholder="Type how your day was today..."
                             />
