@@ -3,7 +3,6 @@ import './chatbotStyle.css'
 
 function Header(){
 
-
     return(
         <div className="background">
             <div className="chat_header">

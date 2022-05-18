@@ -5,20 +5,20 @@ import './chatbotStyle.css'
 
 function Body(props) {
     const [emoData, setdata] = useState("");
-    const [botRes, setBotres] = useState("");
-    const [userInput, setUserInput] = useState("");
-    const [chat, setChat] = useState([]);
+    //Array to save the bot responses and the user response
     const [chatbotRes, setChatbotRes]= useState([{id:"1", type:"botResponse", message:"Tell me how your day was today"}]);
+    //This is to show the current date in  the UI
     const current = new Date();
     const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
 
     const fetchData = async (e) => {
         e.preventDefault();
-        setUserInput(emoData);
 
         setdata("");
+        //Pushing the user response to the array so it can be displayed
         chatbotRes.push({id:"2", message: emoData, type:"userResponse"})
 
+        //fetch call to call the flask api on the post method and get a response
         const response = await fetch("http://localhost:5000/", {
             method:'POST', 
             headers:{'Accept': 'application/json', 'Content-Type': 'application/json'}, 
@@ -28,11 +28,8 @@ function Body(props) {
         })
         
         const json = await response.json();
-        const jsonData = json.data;
-        setBotres(json.data);
-
+        //settting the response to the Array so it can be displayed
         setChatbotRes([...chatbotRes, {id:"2", message:json.data, type:"botResponse"}])
-
 
     };
 
@@ -58,7 +55,6 @@ function Body(props) {
                 }
                 </div>
                 
-
             </div>
             <div className="bottom_wrapper clearfix">
                 <form onSubmit={(e) => fetchData(e)}>
@@ -70,11 +66,7 @@ function Body(props) {
                     </div>
                     <div className="send_input">
                         <button type='submit' className="submit_button" >
-                            <img className="send-image" src={process.env.PUBLIC_URL+"send.png"} />
-                            {/* <div className="text">
-                                Send
-                            </div> */}
-                            
+                            <img className="send-image" src={process.env.PUBLIC_URL+"send.png"} /> 
                         </button>
                     </div>
                 </form>
