@@ -15,7 +15,11 @@
   ```
     cd v1.0/frontend
   ```
-  * Then run the command below to start the react frontend
+  * Then run the command below to install the react node modules 
+  ```
+    npm install
+  ```
+  * Then run the command below to start the react frontend 
   ```
     npm start
   ```
